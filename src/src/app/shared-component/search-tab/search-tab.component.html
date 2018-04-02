@@ -1,0 +1,64 @@
+<div class="tab">
+  <button id="oneway" class="tablinks" [ngClass]="{'active':_searchService.details.oneWay}" (click)="tripType()"><b>One Way</b></button>
+  <button id="twoway" class="tablinks" [ngClass]="{'active':!_searchService.details.oneWay}"(click)="tripType()"><b>Return</b></button>
+</div>
+
+<div id="content">
+
+    <form (ngSubmit)="onSubmit(bookingDetailsForm)" #bookingDetailsForm="ngForm">
+
+          <select [(ngModel)]="_searchService.details.departureCity" required [ngModelOptions]="{standalone: true}" id="departureCity" name="departureCity" #departureCity="ngModel" class="form-control">
+            <option value="select">Select Origin City</option>
+            <option *ngFor="let cities of _searchService.originCities" [value]="cities" >{{cities}}</option>
+          </select>
+          
+          <div *ngIf="(departureCity.invalid && (departureCity.dirty || departureCity.touched)) || (_searchService.details.departureCity =='select' && (departureCity.dirty || departureCity.touched))">
+            <sub style="color:#F74A4A; padding-left: 10px;"><b>Please select a valid input.</b></sub>
+          </div>
+
+          <select [(ngModel)]="_searchService.details.arrivalCity" required [ngModelOptions]="{standalone: true}" id="arrivalCity" name="arrivalCity" #arrivalCity="ngModel" class="form-control">
+            <option value="select">Select Destination City</option>
+            <option  *ngFor="let cities of _searchService.destinationCities" [value]="cities" >{{cities}}</option>
+          </select>
+
+          <div *ngIf="(arrivalCity.invalid && (arrivalCity.dirty || arrivalCity.touched)) || (_searchService.details.arrivalCity =='select' && (arrivalCity.dirty || arrivalCity.touched))">
+            <sub style="color:#F74A4A; padding-left: 10px;"><b>Please select a valid input. </b></sub>
+          </div>
+
+          <input type="date" class="form-control" required #departDate="ngModel" data-placeholder="Departure Date" id="departDate" name="departDate"
+           min="2018-01-01" max="2019-01-01" aria-required="true" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" [(ngModel)]="_searchService.details.departDate">
+          
+          <div *ngIf="departDate.invalid && (departDate.dirty || departDate.touched)">
+            <sub style="color:#F74A4A;padding-left: 10px;"><b>Please provide a valid date.</b></sub>
+          </div>
+
+          <div *ngIf="!_searchService.details.oneWay">
+            <input  type="date" class="form-control" #returnDate="ngModel" id="returnDate" name="returnDate"  data-placeholder="Return Date"
+            min="2018-01-01" max="2019-01-01" aria-required="true" placeholder="YYYY-MM-DD" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required [(ngModel)]="_searchService.details.returnDate">
+            
+            <div *ngIf="returnDate.invalid && (returnDate.dirty || returnDate.touched)">
+              <sub style="color:#F74A4A;padding-left: 10px;"><b>Please provide a valid date.</b></sub>
+            </div>
+          </div>
+
+          <input type="number" name="passengersCount" placeholder="Passengers" min="1" class="form-control" #passengersCount="ngModel" id="passengersCount" required [(ngModel)]="_searchService.details.passengersCount">
+          
+          <div *ngIf="passengersCount.invalid && (passengersCount.dirty || passengersCount.touched)">
+            <sub style="color:#F74A4A;padding-left: 10px;"><b>Please provide a valid input.</b></sub>
+          </div>
+
+          <input type="submit" value="Submit">
+
+          <div *ngIf="invalidForm">
+            <sub style="color:#F74A4A;padding-left: 10px;"><b>Invalid Form Data</b></sub>
+          </div>
+
+    </form>
+
+    <div *ngIf="isSubmitted">
+          <h4>Refine Your Flight Search</h4>
+          <p>Rs.{{_searchService.details.refine}}</p>
+          <input type="range" [(ngModel)]="_searchService.details.refine" steps="100" name="points" min="1000" max="10000" (change)="sliderChangeEvent($event)"/>
+    </div>
+</div>
+
