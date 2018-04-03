@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  refinedPrice: string = "10000";
   title = 'app';
+
+  setRefinedPrice(event) {
+    this.refinedPrice = event;
+  }
 }
