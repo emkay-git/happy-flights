@@ -1,0 +1,54 @@
+<div class="info-box" >
+  <app-flight-info-box></app-flight-info-box>
+</div>
+<div class="align">
+<div>
+<table>
+	<thead>
+	<tr>
+		<th>Flight No.</th>
+		<th>City</th>
+		<th>Departure Time</th>
+        <th>Arrival Time</th>
+		<th>Amount</th>
+        <th>Select</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr *ngFor="let flight of _searchService.oneWayFlights | orderBy">
+		<td>{{flight.flightNo}}</td>
+		<td>{{flight.departureCity}} To {{flight.arrivalCity}}</td>
+		<td>{{flight.time.depart|date:'jm'}}</td>
+		<td>{{flight.time.arrive |date:'jm'}}</td>
+		<td>{{flight. amount}}</td>
+		<td>Matman</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+
+<div>
+<table>
+	<thead>
+	<tr>
+		<th>Flight No.</th>
+		<th>City</th>
+		<th>Departure Time</th>
+        <th>Arrival Time</th>
+		<th>Amount</th>
+        <th>Select</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr *ngFor="let flight of _searchService.twoWayFlights | orderBy">
+		<td>{{flight.flightNo}}</td>
+		<td>{{flight.departureCity}} To {{flight.arrivalCity}}</td>
+		<td>{{flight.time.depart|date:'jm'}}</td>
+		<td>{{flight.time.arrive |date:'jm'}}</td>
+		<td>{{flight. amount}}</td>
+		<td>Matman</td>
+	</tr>
+	</tbody>
+</table>
+</div>
+</div>

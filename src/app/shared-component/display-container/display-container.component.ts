@@ -7,7 +7,7 @@ import { SearchService } from '../../services/search.service';
 })
 export class DisplayContainerComponent implements OnInit {
 
-  constructor(private _searchService: SearchService) { }
+  constructor(public _searchService: SearchService) { }
 
   ngOnInit() {
   }
