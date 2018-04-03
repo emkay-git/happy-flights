@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { BookingDetails } from '../../interfaces/bookingDetails';
+
 @Component({
   selector: 'app-search-tab',
   templateUrl: './search-tab.component.html',
   styleUrls: ['./search-tab.component.css']
 })
 export class SearchTabComponent implements OnInit {
+
+  @Output() refinedPriceOutput: EventEmitter<number> = new EventEmitter<number>();
+
   public invalidForm: boolean = false;
   public isSubmitted: boolean = false;
-
+  public refinePrice: number = 10000;
   constructor(private _searchService: SearchService) { }
 
   ngOnInit() {
+    this.refinedPriceOutput.emit(this.refinePrice);
     this._searchService.citiesList();
     this._searchService.details =   {
       departureCity: 'select', arrivalCity: 'select', departDate: '', returnDate: '', oneWay: true, passengersCount: 1
@@ -53,6 +58,10 @@ export class SearchTabComponent implements OnInit {
     }
     this._searchService.twoWayFlights = this._searchService.searchFlight(twoWayDetails);
     }
+  }
+
+  sliderChangeEvent(event) {
+    this.refinedPriceOutput.emit(this.refinePrice);
   }
 
 }

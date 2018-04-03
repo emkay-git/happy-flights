@@ -12,6 +12,7 @@ import { SearchTabComponent } from './shared-component/search-tab/search-tab.com
 import { SearchService } from './services/search.service';
 import { FlightInfoBoxComponent } from './shared-component/flight-info-box/flight-info-box.component';
 import { OrderByPipe } from './custom-pipes/order-by.pipe';
+import { RefineByPrice } from './custom-pipes/refine-by-price.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { OrderByPipe } from './custom-pipes/order-by.pipe';
     DisplayContainerComponent,
     SearchTabComponent,
     FlightInfoBoxComponent,
-    OrderByPipe
+    OrderByPipe,
+    RefineByPrice
   ],
   imports: [
     BrowserModule,

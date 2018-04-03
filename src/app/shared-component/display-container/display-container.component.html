@@ -15,7 +15,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr *ngFor="let flight of _searchService.oneWayFlights | orderBy">
+	<tr *ngFor="let flight of _searchService.oneWayFlights | orderBy | refineSearch: refinedPrice">
 		<td>{{flight.flightNo}}</td>
 		<td>{{flight.departureCity}} To {{flight.arrivalCity}}</td>
 		<td>{{flight.time.depart|date:'jm'}}</td>
@@ -40,7 +40,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr *ngFor="let flight of _searchService.twoWayFlights | orderBy">
+	<tr *ngFor="let flight of _searchService.twoWayFlights | orderBy | refineSearch: refinedPrice">
 		<td>{{flight.flightNo}}</td>
 		<td>{{flight.departureCity}} To {{flight.arrivalCity}}</td>
 		<td>{{flight.time.depart|date:'jm'}}</td>
