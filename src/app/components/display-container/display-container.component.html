@@ -5,36 +5,69 @@
 	<div style="padding:15px" *ngFor="let flight of _searchService.oneWayFlights | orderBy | refineSearch: refinedPrice">
 		<div class="card">
 				<div class="container">
-				<h4><b>{{flight. amount}}</b></h4> 
-				<p>{{flight.flightNo}}</p>
-				<p>{{flight.departureCity}} To {{flight.arrivalCity}}</p> 
-				<p>Depart: {{flight.time.depart|date}}   Arrive: {{flight.time.arrive |date}}</p> 
+					<div class="flex-row">
+						<div><div><b>Flight No.</b></div><br><div>{{flight.flightNo}}</div></div>
+						<div><div><b>Depart</b></div><br><div>{{flight.time.depart|date:'shortTime'}}</div></div>
+						<div><div><b>Arrive</b></div><br><div>{{flight.time.arrive |date:'shortTime'}}</div></div>
+						<div><div><b>Price</b></div><br><div>{{flight. amount}}</div></div>
+						<div style="margin-top: 10px;">
+							<input type="submit" value="Book">
+						</div>
+					</div>
 				</div>
 		</div>
 	</div>
 </div>
 
+<div class="info" *ngIf="!_searchService.details.oneWay && _searchService.dataFound && fly1Way!=undefined && fly2Way!=undefined ">
+		<div class="flex-row">
+			<div style="padding-top: 7px;"><b>{{fly1Way.flightNo}}</b></div>
+			<div style="padding-top: 7px;"><b>{{fly1Way.time.depart|date:'shortTime'}} -> {{fly1Way.time.arrive |date:'shortTime'}}</b></div>
+			<div class="border" style="padding-top: 7px;"><b>{{fly1Way.amount}}</b></div>
+			<div style="padding-top: 7px;"><b>{{fly2Way.flightNo}}</b></div>
+			<div style="padding-top: 7px;"><b>{{fly2Way.time.depart|date:'shortTime'}} -> {{fly2Way.time.arrive |date:'shortTime'}}</b></div>
+			<div class="border" style="padding-top: 7px;"><b>{{fly2Way.amount}}</b></div>
+			<div style="padding-top: 7px;"><b>{{total}}</b></div>
+			<div style="padding-right: 10px;">
+				<input type="submit" value="Book">
+			</div>
+		</div>
+</div>
 <div else class="align-row" *ngIf="!_searchService.details.oneWay && _searchService.dataFound">
 		<div style="width: 50%">
-			<div style="padding:15px" *ngFor="let flight of _searchService.oneWayFlights | orderBy | refineSearch: refinedPrice">
+			<div style="padding:15px" *ngFor="let flight1 of _searchService.oneWayFlights | orderBy | refineSearch: refinedPrice; let id1 = index">
 				<div class="card">
 						<div class="container">
-						<h4><b>{{flight. amount}}</b></h4> 
-						<p>{{flight.flightNo}}</p>
-						<p>{{flight.departureCity}} To {{flight.arrivalCity}}</p> 
-						<p>Depart: {{flight.time.depart|date}}   Arrive: {{flight.time.arrive |date}}</p> 
+							<div class="flex-row">
+								<div><div><b>Flight No.</b></div><br><div>{{flight1.flightNo}}</div></div>
+								<div><div><b>Depart</b></div><br><div>{{flight1.time.depart|date:'shortTime'}}</div></div>
+								<div><div><b>Arrive</b></div><br><div>{{flight1.time.arrive |date:'shortTime'}}</div></div>
+								<div><div><b>Price</b></div><br><div>{{flight1. amount}}</div></div>
+								<div style="margin-top: 20px;">
+									<fieldset id="group1" style="border-width: 0px">
+										<input type="radio" name="group1" ng-control="group1" [value]="id1"  (click)="get1Way(flight1)">
+									</fieldset>
+								</div>
+							</div>
 						</div>
 				</div>
 			</div>
 		</div>
 		<div style="width: 50%">
-			<div style="padding:15px" *ngFor="let flight of _searchService.twoWayFlights | orderBy | refineSearch: refinedPrice">
+			<div style="padding:15px" *ngFor="let flight2 of _searchService.twoWayFlights | orderBy | refineSearch: refinedPrice; let id2 = index">
 				<div class="card">
 						<div class="container">
-						<h4><b>{{flight. amount}}</b></h4> 
-						<p>{{flight.flightNo}}</p>
-						<p>{{flight.departureCity}} To {{flight.arrivalCity}}</p> 
-						<p>Depart: {{flight.time.depart|date}}   Arrive: {{flight.time.arrive |date}}</p> 
+								<div class="flex-row">
+									<div><div><b>Flight No.</b></div><br><div>{{flight2.flightNo}}</div></div>
+									<div><div><b>Depart</b></div><br><div>{{flight2.time.depart|date:'shortTime'}}</div></div>
+									<div><div><b>Arrive</b></div><br><div>{{flight2.time.arrive |date:'shortTime'}}</div></div>
+									<div><div><b>Price</b></div><br><div>{{flight2. amount}}</div></div>
+									<div style="margin-top: 20px;">
+										<fieldset id="group2" style="border-width: 0px"  >
+											<input type="radio" name="group2" ng-control="group2" [value]="id2" (click)="get2Way(flight2)">
+										</fieldset>
+									</div>
+								</div>
 						</div>
 				</div>
 			</div>
