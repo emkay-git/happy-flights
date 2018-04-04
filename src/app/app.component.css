@@ -48,7 +48,6 @@ main {
     background-color: #0143a3;
     background: linear-gradient(135deg,#0143a3,#0273d4);
     color:white;
-    /*font-family: lato-regular,Arial,Helvetica,sans-serif;*/
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 }
 .header h1{
@@ -69,21 +68,19 @@ main {
   background: linear-gradient(135deg,#0143a3,#0273d4);
   color:white;
   text-transform: uppercase;
-  /* position: absolute; */
 }
 
 div.search-box{
   grid-area: search-box;
-  background:tan;
+  background-color: #fff;
+  border-right: 1px solid #dee2e6;
   height: -webkit-fill-available;
 }
 
 div.flight-card{
-  /* margin:30px; */
   grid-area: flight-card;
   width:100%;
   align-content: center;
-  /*background-image:url('../assets/img/flightcover.jpg');*/
   background-size:contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -99,7 +96,6 @@ div.flight-card{
   background-position: center;
 }*/
 div.info-box{
-  /* margin:30px; */
   width:100%;
   align-content: center;
 }
@@ -132,10 +128,11 @@ div.info-box{
     background-color: #0143a3;
     background: linear-gradient(135deg,#0143a3,#0273d4);
     color:white;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
 }
 .header h1{
-display: inline;
-font-size: 25px;
+    display: inline;
+    font-size: 25px;
 }
 
 .footer{
@@ -147,16 +144,17 @@ font-size: 25px;
   padding: 20px 0px 20px 20px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.3);
   min-height: 20px;
-  background: #F1C40F;
+  background-color: #0143a3;
+  background: linear-gradient(135deg,#0143a3,#0273d4);
   color:white;
   text-transform: uppercase;
-  /* position: absolute; */
 }
 
 div.search-box{
   grid-area: search-box;
-  background:tan;
-  /*height: 100%*/
+  grid-area: search-box;
+  background-color: #fff;
+  border-right: 1px solid #dee2e6;
 }
 
 div.info-box{
@@ -166,11 +164,9 @@ div.info-box{
 }
 
 div.flight-card{
-  /* margin:30px; */
   grid-area: flight-card;
   width:100%;
   align-content: center;
-  /*background-image:url('../assets/img/flightcover.jpg');*/
   background-size:contain;
   background-repeat: no-repeat;
   background-position: center;

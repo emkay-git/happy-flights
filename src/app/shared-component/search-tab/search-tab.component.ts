@@ -30,7 +30,6 @@ export class SearchTabComponent implements OnInit {
   }
     
   public onSubmit(formInputs): void {
-    console.log(formInputs);
       if (formInputs.form.valid) {
       this.invalidForm = false;
       this.isSubmitted = true;
@@ -38,9 +37,6 @@ export class SearchTabComponent implements OnInit {
     }
     else
       this.invalidForm = true;
-
-    console.log(this._searchService.details);
-    this._searchService.searchFlight(this._searchService.details);
   }
 
   public performSearch(): void {

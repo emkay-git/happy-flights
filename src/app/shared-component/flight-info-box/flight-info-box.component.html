@@ -13,7 +13,7 @@
     <h3 *ngIf="_searchService.details.oneWay">{{_searchService.details.departureCity.toUpperCase()}}&nbsp;<span>&#9992;</span>&nbsp;{{_searchService.details.arrivalCity.toUpperCase()}}</h3>
     <h3 *ngIf="!_searchService.details.oneWay">{{_searchService.details.departureCity.toUpperCase()}}&nbsp;<span>&#9992;</span> &nbsp;{{_searchService.details.arrivalCity.toUpperCase()}}&nbsp;<span>&#9992;</span>&nbsp;{{_searchService.details.departureCity.toUpperCase()}}</h3>
     <div class="flightTimingInfo">
-        <p>Departs:{{_searchService.details.departDate |date}}</p>
-        <p *ngIf="!_searchService.details.oneWay">Returns:{{_searchService.details.returnDate |date}}</p>
+        <p>Departs: {{_searchService.details.departDate |date}}</p>
+        <p *ngIf="!_searchService.details.oneWay">Returns: {{_searchService.details.returnDate |date}}</p>
     </div>
 </div>

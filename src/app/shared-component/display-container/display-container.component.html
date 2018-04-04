@@ -1,4 +1,4 @@
-<div class="info-box" >
+<div style="padding: 15px;" >
   <app-flight-info-box></app-flight-info-box>
 </div>
 <div class="align">
@@ -15,7 +15,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	<tr *ngFor="let flight of _searchService.oneWayFlights | orderBy | refineSearch: refinedPrice">
+	<tr *ngFor="let flight of _searchService.oneWayFlights">
 		<td>{{flight.flightNo}}</td>
 		<td>{{flight.departureCity}} To {{flight.arrivalCity}}</td>
 		<td>{{flight.time.depart|date:'jm'}}</td>
