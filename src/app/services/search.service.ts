@@ -23,7 +23,6 @@ export class SearchService {
     this.getData()
             .then(
                 flightDetails => {this.flightDetails = flightDetails,
-                  console.log(this.flightDetails)
                 this.getCitiesList(this.flightDetails)},
                 error => this.errorMessage = <any>error);
 
@@ -60,7 +59,7 @@ export class SearchService {
     private handleError (error: any) {
         let errMsg = (error.message) ? error.message :
             error.status ? `${error.status} - ${error.statusText}` : 'Server error';
-        console.error(errMsg); // log to console instead
+        console.error(errMsg); 
         return Observable.throw(errMsg);
     }
 
@@ -70,16 +69,13 @@ export class SearchService {
 
   private getMatchingFlights(sortedFlightData: any, searchParams: BookingDetails): Flights[] {
     const filteredItmes: Flights[] = [];
-    console.log(sortedFlightData)
     sortedFlightData.flights.map((x) => {
       if (Date.parse(x.date.split(' ')[0]) === Date.parse(searchParams.departDate) && x.departureCity === searchParams.departureCity
         && x.arrivalCity === searchParams.arrivalCity) {
-        console.log('true getmatch');
         this.dataFound = true;
         filteredItmes.push(x);
       }
     });
-    console.log('filter', filteredItmes);
     return filteredItmes;
   }
 }

@@ -4,13 +4,13 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared-component/header/header.component';
-import { FooterComponent } from './shared-component/footer/footer.component';
-import { DisplayContainerComponent } from './shared-component/display-container/display-container.component';
-import { SearchTabComponent } from './shared-component/search-tab/search-tab.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DisplayContainerComponent } from './components/display-container/display-container.component';
+import { SearchTabComponent } from './components/search-tab/search-tab.component';
 
 import { SearchService } from './services/search.service';
-import { FlightInfoBoxComponent } from './shared-component/flight-info-box/flight-info-box.component';
+import { FlightInfoBoxComponent } from './components/flight-info-box/flight-info-box.component';
 import { OrderByPipe } from './custom-pipes/order-by.pipe';
 import { RefineByPrice } from './custom-pipes/refine-by-price.pipe';
 import { ImageAdsComponent } from './shared-component/image-ads/image-ads.component';

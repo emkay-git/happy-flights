@@ -1,0 +1,110 @@
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    background-color: #0143a3;
+    background: linear-gradient(135deg,#0143a3,#0273d4);
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #f9f9f9
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: hsla(0,0%,100%,.15);
+    border-color: hsla(0,0%,100%,.15);
+}
+
+
+/* Create an active/current tablink class */
+.tab button.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+/* Style the tab content */
+.tabcontent {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+select{
+    width: 75%;
+    padding: 5px;
+    background-color: #dee2e6;
+    border: 1px solid #8588C7;
+    margin: 5px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+input{
+    width: 71%;
+    padding: 5px;
+    background-color: #dee2e6;
+    border: 1px solid #8588C7;
+    margin: 5px;
+    border-width: 1px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+input[type='submit']{
+    width:40%;
+    padding: 5px;
+    background-color: #0143a3;
+    border-color: #0143a3;
+    margin: 5px;
+    border-width: 1px;
+    color: #f9f9f9;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+
+input[type='submit']:hover{
+    color: #0143a3;
+    background-color: transparent;
+    background-image: none;
+    border-color: #0143a3;
+}
+
+input[type="date"]::before { 
+	content: attr(data-placeholder);
+	width: 100%;
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+
+span{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}

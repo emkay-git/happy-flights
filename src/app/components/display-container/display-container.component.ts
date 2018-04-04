@@ -8,7 +8,8 @@ import { SearchService } from '../../services/search.service';
 export class DisplayContainerComponent implements OnInit {
 
   @Input() refinedPrice: number = 10000;
-  constructor(public _searchService: SearchService) { }
+  constructor(public _searchService: SearchService) { 
+  }
 
   ngOnInit() {
   

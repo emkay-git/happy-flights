@@ -1,0 +1,42 @@
+<div style="padding: 15px;" >
+  <app-flight-info-box></app-flight-info-box>
+</div>
+<div class="align" *ngIf="_searchService.details.oneWay && _searchService.dataFound">
+	<div style="padding:15px" *ngFor="let flight of _searchService.oneWayFlights | orderBy | refineSearch: refinedPrice">
+		<div class="card">
+				<div class="container">
+				<h4><b>{{flight. amount}}</b></h4> 
+				<p>{{flight.flightNo}}</p>
+				<p>{{flight.departureCity}} To {{flight.arrivalCity}}</p> 
+				<p>Depart: {{flight.time.depart|date}}   Arrive: {{flight.time.arrive |date}}</p> 
+				</div>
+		</div>
+	</div>
+</div>
+
+<div else class="align-row" *ngIf="!_searchService.details.oneWay && _searchService.dataFound">
+		<div style="width: 50%">
+			<div style="padding:15px" *ngFor="let flight of _searchService.oneWayFlights | orderBy | refineSearch: refinedPrice">
+				<div class="card">
+						<div class="container">
+						<h4><b>{{flight. amount}}</b></h4> 
+						<p>{{flight.flightNo}}</p>
+						<p>{{flight.departureCity}} To {{flight.arrivalCity}}</p> 
+						<p>Depart: {{flight.time.depart|date}}   Arrive: {{flight.time.arrive |date}}</p> 
+						</div>
+				</div>
+			</div>
+		</div>
+		<div style="width: 50%">
+			<div style="padding:15px" *ngFor="let flight of _searchService.twoWayFlights | orderBy | refineSearch: refinedPrice">
+				<div class="card">
+						<div class="container">
+						<h4><b>{{flight. amount}}</b></h4> 
+						<p>{{flight.flightNo}}</p>
+						<p>{{flight.departureCity}} To {{flight.arrivalCity}}</p> 
+						<p>Depart: {{flight.time.depart|date}}   Arrive: {{flight.time.arrive |date}}</p> 
+						</div>
+				</div>
+			</div>
+		</div>
+</div>
