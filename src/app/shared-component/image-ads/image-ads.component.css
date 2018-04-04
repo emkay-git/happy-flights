@@ -1,0 +1,25 @@
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+    align-content: center;
+  
+  position: relative;
+  padding: 0px 100px;
+  display:flex;
+  justify-content: center;
+  background-color:#C8C8C8;
+  
+  
+}
+
+.inner-container {
+    
+    background-color: blanchedalmond;
+    margin:auto;
+}
+
+.heading {
+    align-content: center;
+    margin: 20px;
+}
