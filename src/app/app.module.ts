@@ -13,7 +13,7 @@ import { SearchService } from './services/search.service';
 import { FlightInfoBoxComponent } from './components/flight-info-box/flight-info-box.component';
 import { OrderByPipe } from './custom-pipes/order-by.pipe';
 import { RefineByPrice } from './custom-pipes/refine-by-price.pipe';
-import { ImageAdsComponent } from './shared-component/image-ads/image-ads.component';
+import { ImageAdsComponent } from './components/image-ads/image-ads.component';
 
 @NgModule({
   declarations: [
