@@ -5,8 +5,6 @@
 	<app-loader></app-loader>
 </div>
 <div *ngIf="!showLoader">
-
-
 <div class="align" *ngIf="_searchService.details.oneWay && _searchService.dataFound">
 	<div style="padding:15px" *ngFor="let flight of _searchService.oneWayFlights | orderBy | refineSearch: refinedPrice">
 		<div class="card">
@@ -23,7 +21,7 @@
 				</div>
 		</div>
 	</div>
-
+</div>
 <div class="info" *ngIf="!_searchService.details.oneWay && _searchService.dataFound && fly1Way!=undefined && fly2Way!=undefined ">
 		<div class="flex-row">
 			<div style="padding-top: 7px;"><b>{{fly1Way.flightNo}}</b></div>
@@ -38,7 +36,8 @@
 			</div>
 		</div>
 </div>
-<div else class="align-row" *ngIf="!_searchService.details.oneWay && _searchService.dataFound">
+
+<div  class="align-row" *ngIf="!_searchService.details.oneWay && _searchService.dataFound">
 		<div style="width: 50%">
 			<div style="padding:15px" *ngFor="let flight1 of _searchService.oneWayFlights | orderBy | refineSearch: refinedPrice; let id1 = index">
 				<div class="card">
@@ -78,4 +77,5 @@
 			</div>
 	</div>
 </div>
+
 </div>
