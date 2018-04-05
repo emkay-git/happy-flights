@@ -20,6 +20,14 @@ export class DisplayContainerComponent implements OnInit {
     setTimeout(()=>{
       this.showLoader = false;
     },2000);
+    this.showLoader = true;
+  }
+
+  ngOnChanges() {
+    setTimeout(()=>{
+      this.showLoader = false;
+    },2000);
+    this.showLoader = true;
   }
   get1Way(input:Flights){
     this.fly1Way= input;
