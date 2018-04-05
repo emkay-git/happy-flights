@@ -7,9 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   refinedPrice: string = "10000";
+  display: boolean = false;
   title = 'app';
 
   setRefinedPrice(event) {
     this.refinedPrice = event;
+  }
+
+  setDisplay(event) {
+    this.display = event;
   }
 }

@@ -3,12 +3,12 @@
 </header>
 <div class="wrapper">
   <div class="search-box">
-    <app-search-tab (refinedPriceOutput)="setRefinedPrice($event)"></app-search-tab>
+    <app-search-tab (refinedPriceOutput)="setRefinedPrice($event)" (submitOutput)="setDisplay($event)"></app-search-tab>
   </div>
  
   <div class="flight-card" >
-    <app-image-ads *ngIf="!false"></app-image-ads>
-    <app-display-container *ngIf="false" [refinedPrice]="refinedPrice"></app-display-container>
+    <app-image-ads *ngIf="!display"></app-image-ads>
+    <app-display-container *ngIf="display" [refinedPrice]="refinedPrice"></app-display-container>
   </div>
 </div>
 <footer>

@@ -14,6 +14,7 @@ import { FlightInfoBoxComponent } from './components/flight-info-box/flight-info
 import { OrderByPipe } from './custom-pipes/order-by.pipe';
 import { RefineByPrice } from './custom-pipes/refine-by-price.pipe';
 import { ImageAdsComponent } from './shared-component/image-ads/image-ads.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ImageAdsComponent } from './shared-component/image-ads/image-ads.compon
     FlightInfoBoxComponent,
     OrderByPipe,
     RefineByPrice,
-    ImageAdsComponent
+    ImageAdsComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
