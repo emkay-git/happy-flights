@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { Flights } from '../../interfaces/flightDetails';
 @Component({
@@ -7,7 +7,7 @@ import { Flights } from '../../interfaces/flightDetails';
   styleUrls: ['./display-container.component.css']
 })
 export class DisplayContainerComponent implements OnInit {
-
+  @Output() fly = new EventEmitter<boolean>();
   @Input() refinedPrice: number = 10000;
   showLoader: boolean = true;
   public fly1Way: Flights;
@@ -33,5 +33,9 @@ export class DisplayContainerComponent implements OnInit {
   sum(num:any){
     this.total = this.total + parseFloat(num);
     console.log("amount", this.total)
+  }
+
+   public bookThisFlight() {
+    this.fly.emit(true);
   }
 }

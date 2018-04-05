@@ -21,12 +21,20 @@
 }
 
 h1{
-    font-size: 80px;
+    font-size: 25px;
 }
-
+span{
+    padding-left: 80px;
+}
 .center-it{
     height:100vh;
     display:flex;
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width: 600px) {
+   span{
+    padding-left: 0px;
+}
+} 

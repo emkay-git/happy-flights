@@ -9,12 +9,17 @@ export class AppComponent {
   refinedPrice: string = "10000";
   display: boolean = false;
   title = 'app';
+  fly: boolean = false;
 
-  setRefinedPrice(event) {
+  public setRefinedPrice(event) {
     this.refinedPrice = event;
   }
 
-  setDisplay(event) {
+  public setDisplay(event) {
     this.display = event;
+  }
+
+  public updateFlying(fly: boolean) {
+    this.fly = fly;
   }
 }

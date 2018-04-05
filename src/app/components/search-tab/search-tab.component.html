@@ -53,9 +53,13 @@
             <sub style="color:#F74A4A;padding-left: 10px;"><span><img src="../../../assets/image/error.png" alt="HTML5 Icon" style="width:20px;height:20px;"></span><b>Invalid Form Data</b></sub>
           </div>
 
+          <div *ngIf="sameCity">
+            <sub style="color:#F74A4A;padding-left: 10px;"><span><img src="../../../assets/image/error.png" alt="HTML5 Icon" style="width:20px;height:20px;"></span><b>Departure city and Arrival city cannot be same.</b></sub>
+          </div>
+
     </form>
 
-    <div class ="refine-data" *ngIf="isSubmitted">
+    <div class ="refine-data" *ngIf="isSubmitted && _searchService.dataFound">
           <p style="font-weight: 700;font-size: 15px;">Price Range</p>
           <p class="range"><span style="padding-left: 3px;">1000</span><span style="float: right;padding-right: 30px;">{{refinePrice}}</span></p>
           <input type="range" [(ngModel)]="refinePrice" steps="100" name="points" min="1000" max="10000" (change)="sliderChangeEvent($event)"/>

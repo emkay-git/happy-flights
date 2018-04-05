@@ -104,7 +104,7 @@ input[type='submit']:hover{
 
 .center-loader {
   display: flex;
-  height:100vh;
+  height:75vh;
   justify-content: center;
   align-items: center;
 }

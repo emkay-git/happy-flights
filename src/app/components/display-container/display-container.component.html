@@ -15,7 +15,7 @@
 						<div><div><b>Arrive</b></div><br><div>{{flight.time.arrive |date:'shortTime'}}</div></div>
 						<div><div><b>Price</b></div><br><div>{{flight. amount}}</div></div>
 						<div style="margin-top: 10px;">
-							<input type="submit" value="Book">
+							<input type="submit" value="Book" (click)="bookThisFlight()">
 						</div>
 					</div>
 				</div>
@@ -32,7 +32,7 @@
 			<div class="border" style="padding-top: 7px;"><b>{{fly2Way.amount}}</b></div>
 			<div style="padding-top: 7px;"><b>{{total}}</b></div>
 			<div style="padding-right: 10px;">
-				<input type="submit" value="Book">
+				<input type="submit" value="Book" (click)="bookThisFlight()">
 			</div>
 		</div>
 </div>

@@ -13,6 +13,7 @@ export class SearchTabComponent implements OnInit {
   @Output() submitOutput: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public invalidForm: boolean = false;
+  public sameCity: boolean = false;
   public isSubmitted: boolean = false;
   public refinePrice: number = 10000;
   constructor(private _searchService: SearchService) { }
@@ -28,17 +29,24 @@ export class SearchTabComponent implements OnInit {
 
   public tripType(){
     this._searchService.details.oneWay= !this._searchService.details.oneWay;
+    this._searchService.dataFound = false;
+    this.submitOutput.emit(false);
   }
     
   public onSubmit(formInputs): void {
-      if (formInputs.form.valid) {
+      if (formInputs.form.valid && this._searchService.details.departureCity!== this._searchService.details.arrivalCity) {
       this.invalidForm = false;
+      this.sameCity = false;
       this.isSubmitted = true;
       this.performSearch();
       this.submitOutput.emit(true);
     }
     else
+      if(this._searchService.details.departureCity=== this._searchService.details.arrivalCity && this._searchService.details.departureCity !== 'select')
+      this.sameCity = true;
+      else
       this.invalidForm = true;
+
   }
 
   public performSearch(): void {

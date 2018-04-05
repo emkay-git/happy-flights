@@ -1,4 +1,4 @@
-.breadcrumbs{
+.fly-card{
     width:100%;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
@@ -8,12 +8,12 @@
     background: #dee2e6;
     color: black;
 }
-.breadcrumbs h3{
+.fly-card h3{
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
 }
-.breadcrumbs p{
+.fly-card p{
     padding: 0px;
     -webkit-margin-before: 0.4em;
     font-size: 14px;

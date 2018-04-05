@@ -24,7 +24,9 @@ export class SearchService {
             .then(
                 flightDetails => {this.flightDetails = flightDetails,
                 this.getCitiesList(this.flightDetails)},
-                error => this.errorMessage = <any>error);
+                error => { this.errorMessage = <any>error,
+                console.log("Error in fetching details",this.errorMessage)}
+                );
 
   }
 
@@ -69,6 +71,7 @@ export class SearchService {
 
   private getMatchingFlights(sortedFlightData: any, searchParams: BookingDetails): Flights[] {
     const filteredItmes: Flights[] = [];
+    this.dataFound = false;
     sortedFlightData.flights.map((x) => {
       if (Date.parse(x.date.split(' ')[0]) === Date.parse(searchParams.departDate) && x.departureCity === searchParams.departureCity
         && x.arrivalCity === searchParams.arrivalCity) {
