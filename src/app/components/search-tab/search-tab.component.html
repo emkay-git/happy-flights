@@ -55,9 +55,9 @@
 
     </form>
 
-    <div *ngIf="isSubmitted">
-          <h4>Refine Your Flight Search</h4>
-          <p>Rs.{{refinePrice}}</p>
+    <div class ="refine-data" *ngIf="isSubmitted">
+          <p style="font-weight: 700;font-size: 15px;">Price Range</p>
+          <p class="range"><span style="padding-left: 3px;">1000</span><span style="float: right;padding-right: 30px;">{{refinePrice}}</span></p>
           <input type="range" [(ngModel)]="refinePrice" steps="100" name="points" min="1000" max="10000" (change)="sliderChangeEvent($event)"/>
     </div>
 </div>
