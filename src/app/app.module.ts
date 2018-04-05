@@ -15,6 +15,7 @@ import { OrderByPipe } from './custom-pipes/order-by.pipe';
 import { RefineByPrice } from './custom-pipes/refine-by-price.pipe';
 import { ImageAdsComponent } from './components/image-ads/image-ads.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ErrorCardComponent } from './components/error-card/error-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     OrderByPipe,
     RefineByPrice,
     ImageAdsComponent,
-    LoaderComponent
+    LoaderComponent,
+    ErrorCardComponent
   ],
   imports: [
     BrowserModule,
