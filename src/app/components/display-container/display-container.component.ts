@@ -8,11 +8,14 @@ import { SearchService } from '../../services/search.service';
 export class DisplayContainerComponent implements OnInit {
 
   @Input() refinedPrice: number = 10000;
+  showLoader: boolean = true;
   constructor(public _searchService: SearchService) { 
   }
 
   ngOnInit() {
-  
+    setTimeout(()=>{
+      this.showLoader = false;
+    },2000);
   }
 
 }

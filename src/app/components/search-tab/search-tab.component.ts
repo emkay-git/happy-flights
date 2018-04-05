@@ -10,6 +10,7 @@ import { BookingDetails } from '../../interfaces/bookingDetails';
 export class SearchTabComponent implements OnInit {
 
   @Output() refinedPriceOutput: EventEmitter<number> = new EventEmitter<number>();
+  @Output() submitOutput: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public invalidForm: boolean = false;
   public isSubmitted: boolean = false;
@@ -34,6 +35,7 @@ export class SearchTabComponent implements OnInit {
       this.invalidForm = false;
       this.isSubmitted = true;
       this.performSearch();
+      this.submitOutput.emit(true);
     }
     else
       this.invalidForm = true;
